@@ -13,8 +13,12 @@ class MovieApi {
   }
 
   Future<Movie> getMovie(int id) async {
-    var response = await _dio.get('/Filme/$id');
+    var response = await _dio.get('/Filme/$id'); 
 
     return Movie.fromJson(response.data);
+  }
+
+  Future<void> deleteComment(int movieId, int id) async {
+    await _dio.delete('/Filme/$movieId/Comentario/$id');
   }
 }

@@ -20,4 +20,10 @@ class MovieDetailController {
     var result = await api.getMovie(_movie.id);
     _controller.sink.add(result);
   }
+
+  void deleteComment(int id) async {
+    await api.deleteComment(_movie.id, id);
+
+    getMovie();
+  }
 }
