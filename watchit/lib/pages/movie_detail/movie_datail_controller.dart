@@ -26,4 +26,10 @@ class MovieDetailController {
 
     getMovie();
   }
+
+  Future<void> postComment(String comment) async {
+    await api.postComment(_movie.id, comment);
+
+    getMovie();
+  }
 }

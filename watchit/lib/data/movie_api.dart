@@ -21,4 +21,13 @@ class MovieApi {
   Future<void> deleteComment(int movieId, int id) async {
     await _dio.delete('/Filme/$movieId/Comentario/$id');
   }
+
+  Future<void> postComment(int movieId, String comment) async {
+    await _dio.post(
+      '/Filme/$movieId/Comentario',
+      data: {
+        "comment": comment,
+      }
+    );
+  }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:watchit/data/models/movie.dart';
 import 'package:watchit/pages/movie_detail/movie_datail_controller.dart';
+import 'package:watchit/pages/movie_detail/widgets/add_comment_widget.dart';
 import 'package:watchit/pages/movie_detail/widgets/movie_detail_about_widget.dart';
 import 'package:watchit/pages/movie_detail/widgets/movie_detail_comments_widget.dart';
 import 'package:watchit/pages/movie_detail/widgets/movie_detail_cover_widget.dart';
@@ -34,6 +35,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.alphaBlend(Colors.black12, Theme.of(context).scaffoldBackgroundColor),
       body: StreamBuilder<Movie>(
         initialData: widget.movie,
         stream: controller.stream,
@@ -51,7 +53,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
               MovieDetailAboutWidget(movie: movie),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 32.0, left: 16.0, right: 16.0,),
+                  padding: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0,),
                   child: Text(
                     "Comentários",
                     style: Theme.of(context).textTheme.titleMedium,
@@ -75,8 +77,8 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                     ),
                   ),
                 )
-              else  
-                MovieDetailCommentsWidget(movie: movie)
+              else MovieDetailCommentsWidget(movie: movie),
+              const AddCommentWidget()
             ],
           );
         },
