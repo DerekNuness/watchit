@@ -5,4 +5,4 @@ WatchIt é um aplicativo que conecta usuários ao vasto mundo do cinema, proporc
 ## Tecnologias Utilizadas
 
 * API de Filmes: Integração com uma API externa para obter dados sobre filmes.
-* Linguagens de Programação: Flutter
+* Linguagens de Programação: Dart( Flutter )
